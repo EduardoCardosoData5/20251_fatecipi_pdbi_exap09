@@ -150,4 +150,37 @@ END $$;
 --   END IF;
 -- END $$;
 
->>>>>>> 9dfa351 (feat: implementa menu de escolha de operação)
+DO $$
+DECLARE
+    salario NUMERIC;
+    novo_salario NUMERIC;
+    reajuste NUMERIC;
+    percentual INT;
+BEGIN
+    -- Gerando um salário aleatório entre 300 e 2500
+    salario := valor_aleatorio_entre(300, 2500);
+
+    -- Definindo o percentual de reajuste com base no salário
+    IF salario <= 400.00 THEN
+        percentual := 15;
+    ELSIF salario <= 800.00 THEN
+        percentual := 12;
+    ELSIF salario <= 1200.00 THEN
+        percentual := 10;
+    ELSIF salario <= 2000.00 THEN
+        percentual := 7;
+    ELSE
+        percentual := 4;
+    END IF;
+
+    -- Calculando reajuste e novo salário
+    reajuste := salario * percentual / 100.0;
+    novo_salario := salario + reajuste;
+
+    -- Exibindo os resultados
+    RAISE NOTICE 'Salário original: %.2f', salario;
+    RAISE NOTICE 'Novo salario: %.2f', novo_salario;
+    RAISE NOTICE 'Reajuste ganho: %.2f', reajuste;
+    RAISE NOTICE 'Em percentual: %', percentual || ' %';
+END;
+$$
