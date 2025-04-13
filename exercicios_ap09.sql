@@ -49,3 +49,30 @@
 --   END IF;
 -- END $$;
 
+-- 1.2 CASE - Verifica se número é múltiplo de 3 ou de 5
+-- DO $$
+-- DECLARE
+--   numero INT := valor_aleatorio_entre(1, 100);
+-- BEGIN
+--   RAISE NOTICE 'Número gerado: %', numero;
+
+--   RAISE NOTICE '%',
+--     CASE
+--       WHEN numero % 3 = 0 OR numero % 5 = 0 THEN 'É múltiplo de 3 ou de 5'
+--       ELSE 'Não é múltiplo de 3 nem de 5'
+--     END;
+-- END $$;
+
+-- 1.3a IF - Soma
+DO $$
+DECLARE
+  op1 INT := valor_aleatorio_entre(1, 100);
+  op2 INT := valor_aleatorio_entre(1, 100);
+  operacao INT := 1;
+  resultado INT;
+BEGIN
+  IF operacao = 1 THEN
+    resultado := op1 + op2;
+    RAISE NOTICE '% + % = %', op1, op2, resultado;
+  END IF;
+END $$;
