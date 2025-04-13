@@ -22,16 +22,29 @@
 -- END $$;
 
 -- 1.1 CASE - Verifica se número é múltiplo de 3
+-- DO $$
+-- DECLARE
+--   numero INT := valor_aleatorio_entre(1, 100);
+-- BEGIN
+--   RAISE NOTICE 'Número gerado: %', numero;
+
+--   RAISE NOTICE '%',
+--     CASE
+--       WHEN numero % 3 = 0 THEN 'É múltiplo de 3'
+--       ELSE 'Não é múltiplo de 3'
+--     END;
+-- END $$;
+
+-- 1.2 IF - Verifica se número é múltiplo de 3 ou de 5
 DO $$
 DECLARE
   numero INT := valor_aleatorio_entre(1, 100);
 BEGIN
   RAISE NOTICE 'Número gerado: %', numero;
 
-  RAISE NOTICE '%',
-    CASE
-      WHEN numero % 3 = 0 THEN 'É múltiplo de 3'
-      ELSE 'Não é múltiplo de 3'
-    END;
+  IF numero % 3 = 0 OR numero % 5 = 0 THEN
+    RAISE NOTICE 'É múltiplo de 3 ou de 5';
+  ELSE
+    RAISE NOTICE 'Não é múltiplo de 3 nem de 5';
+  END IF;
 END $$;
-
