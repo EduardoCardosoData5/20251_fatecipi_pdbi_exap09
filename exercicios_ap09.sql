@@ -63,16 +63,24 @@
 --     END;
 -- END $$;
 
--- 1.3a IF - Soma
+-- 1.3 Calculadora
+
+
 DO $$
 DECLARE
   op1 INT := valor_aleatorio_entre(1, 100);
   op2 INT := valor_aleatorio_entre(1, 100);
-  operacao INT := 1;
-  resultado INT;
+  operacao INT := valor_aleatorio_entre(1, 4);
+  resultado NUMERIC;
 BEGIN
+  RAISE NOTICE 'Operação escolhida: %', operacao;
+  RAISE NOTICE 'Números: % e %', op1, op2;
+
   IF operacao = 1 THEN
     resultado := op1 + op2;
     RAISE NOTICE '% + % = %', op1, op2, resultado;
   END IF;
 END $$;
+
+
+
