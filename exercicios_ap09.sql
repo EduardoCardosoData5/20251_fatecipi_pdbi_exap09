@@ -66,29 +66,45 @@
 -- 1.3 Calculadora
 
 
-DO $$
-DECLARE
-  op1 INT := valor_aleatorio_entre(1, 100);
-  op2 INT := valor_aleatorio_entre(1, 100);
-  operacao INT := valor_aleatorio_entre(1, 4);
-  resultado NUMERIC;
-BEGIN
-  RAISE NOTICE 'Operação escolhida: %', operacao;
-  RAISE NOTICE 'Números: % e %', op1, op2;
+-- DO $$
+-- DECLARE
+--   op1 INT := valor_aleatorio_entre(1, 100);
+--   op2 INT := valor_aleatorio_entre(1, 100);
+--   operacao INT := 2;
+--   resultado NUMERIC;
+-- BEGIN
+--   RAISE NOTICE '=== MENU CALCULADORA ===';
+--   RAISE NOTICE '1 - Soma';
+--   RAISE NOTICE '2 - Subtração';
+--   RAISE NOTICE '3 - Multiplicação';
+--   RAISE NOTICE '4 - Divisão';
+--   RAISE NOTICE '==========================';
 
-  IF operacao = 1 THEN
-    resultado := op1 + op2;
-    RAISE NOTICE '% + % = %', op1, op2, resultado;
+--   RAISE NOTICE 'Você escolheu a operação: %', operacao;
+--   RAISE NOTICE 'Números: % e %', op1, op2;
 
+--   IF operacao = 1 THEN
+--     resultado := op1 + op2;
+--     RAISE NOTICE '% + % = %', op1, op2, resultado;
 
-  ELSIF operacao = 2 THEN
-    resultado := op1 - op2;
-    RAISE NOTICE '% - % = %', op1, op2, resultado;
+--   ELSIF operacao = 2 THEN
+--     resultado := op1 - op2;
+--     RAISE NOTICE '% - % = %', op1, op2, resultado;
 
-  ELSIF operacao = 3 THEN
-    resultado := op1 * op2;
-    RAISE NOTICE '% * % = %', op1, op2, resultado;
-  END IF;
-END $$;
+--   ELSIF operacao = 3 THEN
+--     resultado := op1 * op2;
+--     RAISE NOTICE '% * % = %', op1, op2, resultado;
 
+--   ELSIF operacao = 4 THEN
+--     IF op2 != 0 THEN
+--       resultado := op1::NUMERIC / op2;
+--       RAISE NOTICE '% / % = %', op1, op2, resultado;
+--     ELSE
+--       RAISE NOTICE 'Divisão por zero não é permitida!';
+--     END IF;
+
+--   ELSE
+--     RAISE NOTICE 'Operação inválida!';
+--   END IF;
+-- END $$;
 
