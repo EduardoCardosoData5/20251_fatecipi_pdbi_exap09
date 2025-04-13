@@ -36,15 +36,16 @@
 -- END $$;
 
 -- 1.2 IF - Verifica se número é múltiplo de 3 ou de 5
-DO $$
-DECLARE
-  numero INT := valor_aleatorio_entre(1, 100);
-BEGIN
-  RAISE NOTICE 'Número gerado: %', numero;
+-- DO $$
+-- DECLARE
+--   numero INT := valor_aleatorio_entre(1, 100);
+-- BEGIN
+--   RAISE NOTICE 'Número gerado: %', numero;
 
-  IF numero % 3 = 0 OR numero % 5 = 0 THEN
-    RAISE NOTICE 'É múltiplo de 3 ou de 5';
-  ELSE
-    RAISE NOTICE 'Não é múltiplo de 3 nem de 5';
-  END IF;
-END $$;
+--   IF numero % 3 = 0 OR numero % 5 = 0 THEN
+--     RAISE NOTICE 'É múltiplo de 3 ou de 5';
+--   ELSE
+--     RAISE NOTICE 'Não é múltiplo de 3 nem de 5';
+--   END IF;
+-- END $$;
+
