@@ -8,15 +8,30 @@
 -- $$ LANGUAGE plpgsql;
 
 -- 1.1 IF - Verifica se número é múltiplo de 3
+-- DO $$
+-- DECLARE
+--   numero INT := valor_aleatorio_entre(1, 100);
+-- BEGIN
+--   RAISE NOTICE 'Número gerado: %', numero;
+
+--   IF numero % 3 = 0 THEN
+--     RAISE NOTICE 'É múltiplo de 3';
+--   ELSE
+--     RAISE NOTICE 'Não é múltiplo de 3';
+--   END IF;
+-- END $$;
+
+-- 1.1 CASE - Verifica se número é múltiplo de 3
 DO $$
 DECLARE
   numero INT := valor_aleatorio_entre(1, 100);
 BEGIN
   RAISE NOTICE 'Número gerado: %', numero;
 
-  IF numero % 3 = 0 THEN
-    RAISE NOTICE 'É múltiplo de 3';
-  ELSE
-    RAISE NOTICE 'Não é múltiplo de 3';
-  END IF;
+  RAISE NOTICE '%',
+    CASE
+      WHEN numero % 3 = 0 THEN 'É múltiplo de 3'
+      ELSE 'Não é múltiplo de 3'
+    END;
 END $$;
+
