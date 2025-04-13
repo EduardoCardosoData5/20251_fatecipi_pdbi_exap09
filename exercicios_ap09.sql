@@ -79,6 +79,11 @@ BEGIN
   IF operacao = 1 THEN
     resultado := op1 + op2;
     RAISE NOTICE '% + % = %', op1, op2, resultado;
+
+
+  ELSIF operacao = 2 THEN
+    resultado := op1 - op2;
+    RAISE NOTICE '% - % = %', op1, op2, resultado;
   END IF;
 END $$;
 
